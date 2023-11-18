@@ -1,7 +1,7 @@
 ## Requisitos para el 5
 
 - [ ] Redactar documentación
-- [ ] Imagen 1: Servidor Web
+- [x] Imagen 1: Servidor Web
 - [x] Imagen 2: Servidor de BBDD (Redis no)
 - [ ] Imagen extra
 - [ ] Subir todas las imagenes a Docker Hub
