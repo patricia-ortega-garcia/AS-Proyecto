@@ -12,3 +12,8 @@
 [] Imagenes o contenedores adicionales
 [] Funcionalidades no vistas en clase
 
+#### Posibles imagenes
+- python
+- imageMagik
+- Mosquitto
+- Icecast (musica)

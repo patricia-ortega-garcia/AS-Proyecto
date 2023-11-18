@@ -2,14 +2,14 @@ version: '3.7'
 
 services:
 
-  phpmyadmin:
-    image: phpmyadmin
-    restart: always
-    ports:
-      - 8080:80
-    environment:
-      PMA_ARBITRARY: 1
-      MYSQL_DATABASE: database
+#  phpmyadmin:
+#    image: phpmyadmin
+#    restart: always
+#    ports:
+#      - 8080:80
+#    environment:
+#      PMA_ARBITRARY: 1
+#      MYSQL_DATABASE: database
 
   db:
     image: mysql:5.6
@@ -20,4 +20,25 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: example
       MYSQL_DATABASE: database
- 
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    volumes:
+      - ./app:/var/www/html
+    environment:
+      - ALLOW_OVERRIDE=true
+
+#  web:
+#    image: web
+#    environment:
+#      - ALLOW_OVERRIDE=true
+#    ports:
+#      - "80:80"
+#    links:
+#      - db
+#    volumes:
+#      - ./app:/var/www/html/
