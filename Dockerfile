@@ -13,3 +13,11 @@ COPY ./app /var/www/html
 # Configura Apache para que sirva tu aplicación
 RUN a2enmod rewrite
 RUN service apache2 restart
+
+
+
+#LIBRERIAS NECESARIAS PARA PYTHON
+#pip install pandas
+#python -m pip install -U pip
+#python -m pip install -U matplotlib
+#pip install mysql-connector-python

@@ -1,16 +1,6 @@
 version: '3.7'
 
 services:
-
-#  phpmyadmin:
-#    image: phpmyadmin
-#    restart: always
-#    ports:
-#      - 8080:80
-#    environment:
-#      PMA_ARBITRARY: 1
-#      MYSQL_DATABASE: database
-
   db:
     image: mysql:5.6
     restart: always
@@ -31,7 +21,29 @@ services:
       - ./app:/var/www/html
     environment:
       - ALLOW_OVERRIDE=true
+    depends_on:
+      - python
 
+#  python:
+#    image: python:3.8
+#    restart: always
+#    volumes:
+#      - 
+#    working_dir: /app
+#    command: tail -f /dev/null
+#    depends_on:
+#      - db
+
+  python:
+    build:
+      context: .
+      dockerfile: DockerfilePython
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+    volumes:
+      - ./app:/app
 #  web:
 #    image: web
 #    environment:
@@ -42,3 +54,13 @@ services:
 #      - db
 #    volumes:
 #      - ./app:/var/www/html/
+
+
+#  phpmyadmin:
+#    image: phpmyadmin
+#    restart: always
+#    ports:
+#      - 8081:80
+#    environment:
+#      PMA_ARBITRARY: 1
+#      MYSQL_DATABASE: database
