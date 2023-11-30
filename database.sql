@@ -1160,7 +1160,7 @@ CREATE TABLE `usuarios` (
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`nombre`, `apellidos`, `dni`, `telefono`, `fecha_nacimiento`, `email`, `usuario`, `contrasena`) VALUES ('Ana', 'García', '99999999R', 600000000, '2023-10-14', 'ejemplo@gmail.com', 'Anita', 'contrasena1234');
+--INSERT INTO `usuarios` (`nombre`, `apellidos`, `dni`, `telefono`, `fecha_nacimiento`, `email`, `usuario`, `contrasena`) VALUES ('Ana', 'García', '99999999R', 600000000, '2023-10-14', 'ejemplo@gmail.com', 'Anita', 'contrasena1234');
 
 --
 -- Índices para tablas volcadas
