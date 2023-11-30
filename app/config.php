@@ -18,7 +18,7 @@ if (!$conn) {
 // phpinfo();
   $hostname = "db";
   $username = "root";
-  $password = "example";
+  $password = "4O7d9.jk"; //"example";
   $db = "database";
 
   $conn = mysqli_connect($hostname,$username,$password,$db);
