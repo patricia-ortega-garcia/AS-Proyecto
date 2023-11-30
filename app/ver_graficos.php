@@ -12,7 +12,7 @@
     </header>
     <main>
         <h2>Estadísticas de Videojuegos</h2>
-        <p style="text-align:center;"><img src="./imagenes/frecuencia_generos.jpg" alt="Gráfico de Géneros de Videojuegos"></p>
+        <p style="text-align:center;"><img src="./imagenes/frecuencia_generos.png" alt="Gráfico de Géneros de Videojuegos" width=75% height=auto></p>
     </main>
     <main>
         <div class="button-container">

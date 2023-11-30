@@ -1,37 +1,24 @@
-import matplotlib.pyplot as plt
 import pandas as pd
+import matplotlib.pyplot as plt
 from io import BytesIO
-import mysql.connector
 
-# Configuración de la conexión a la base de datos
-db_config = {
-    'host': 'db',
-    'user': 'root',
-    'password': 'example',
-    'database': 'database'
-}
+# Lee el archivo CSV
+df = pd.read_csv('juegosParaGraficoCOMPLETO.csv')
 
-# Establecer conexión a la base de datos
-conn = mysql.connector.connect(db_config)
+# Cuenta la frecuencia de juegos por género
+genre_counts = df['Genre'].value_counts()
 
-# Consulta SQL para obtener los datos
-sql_query = "SELECT * FROM mytable"
+# Selecciona los 5 géneros más frecuentes
+top_genres = genre_counts.head(5)
 
-# Obtener datos de la base de datos en un DataFrame
-df = pd.read_sql(sql_query, conn)
-
-# Cerrar la conexión a la base de datos
-conn.close()
-
-# Dividir los géneros y contar la frecuencia de cada uno
-genres = df['Genre'].str.split(', ', expand=True).stack().value_counts()
-
-# Crear un gráfico de barras
+# Configura el gráfico de barras
 plt.figure(figsize=(10, 6))
-genres.plot(kind='bar', color='skyblue')
+top_genres.plot(kind='bar', color='skyblue')
 plt.title('Frecuencia de Juegos por Género')
 plt.xlabel('Género')
 plt.ylabel('Número de Juegos')
+plt.xticks(rotation=45, ha='right')  # Rota las etiquetas del eje x para mayor legibilidad
+plt.tight_layout()
 
 # Guardar el gráfico en una imagen
 image_stream = BytesIO()
@@ -41,11 +28,5 @@ image_stream.seek(0)
 # Puedes guardar la imagen en un archivo si lo deseas
 plt.savefig('./imagenes/frecuencia_generos.png', format='png')
 
-# Puedes mostrar el gráfico si estás ejecutando el script en un entorno interactivo
-# plt.show()
-
 # Cerrar la figura para liberar recursos
 plt.close()
-
-# Ahora, image_stream contiene la imagen en formato bytes
-# Puedes usar image_stream para mostrar la imagen en una aplicación web o guardarlo en una base de datos, etc.
