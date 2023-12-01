@@ -8,5 +8,5 @@ COPY ./app /app
 # Instala las dependencias
 RUN pip install -r requirements.txt
 
-# Comando para ejecutar la aplicación Flask
+# Comando para ejecutar la aplicación
 CMD ["python", "generar_grafico.py"]

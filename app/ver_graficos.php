@@ -1,3 +1,17 @@
+<?php
+// Incluir archivo de configuración y verificar la sesión del usuario (debes implementar la lógica de autenticación)
+include("config.php");
+session_start();
+
+// Verificar la sesión del usuario (debes implementar esta lógica)
+if (!isset($_SESSION["usuario"])) {
+    header("Location: index.php"); // Redirigir a la página de inicio de sesión si el usuario no está autenticado
+    exit();
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
