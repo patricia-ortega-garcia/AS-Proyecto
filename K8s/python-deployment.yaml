@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: /snap/kompose/19/kompose-linux-amd64 convert -f docker-compose.yml
+    kompose.version: 1.21.0 (992df58d8)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: python
+  name: python
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: python
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: /snap/kompose/19/kompose-linux-amd64 convert -f docker-compose.yml
+        kompose.version: 1.21.0 (992df58d8)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: python
+    spec:
+      containers:
+      - image: python
+        imagePullPolicy: ""
+        name: python
+        ports:
+        - containerPort: 5000
+        resources: {}
+        volumeMounts:
+        - mountPath: /app
+          name: python-claim0
+      restartPolicy: Always
+      serviceAccountName: ""
+      volumes:
+      - name: python-claim0
+        persistentVolumeClaim:
+          claimName: python-claim0
+status: {}
