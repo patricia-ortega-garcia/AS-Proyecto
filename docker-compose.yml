@@ -9,6 +9,7 @@ services:
     restart: always
     volumes:
       - ./database.sql:/docker-entrypoint-initdb.d/database.sql
+      - database:/var/lib/mysql
 
     environment:
       MYSQL_ROOT_PASSWORD: 4O7d9.jk #example
@@ -76,3 +77,7 @@ services:
       - ./prometheus:/etc/prometheus
     command:
       - "--config.file=/etc/prometheus/prometheus.yml"
+      
+      
+volumes:
+  database:
