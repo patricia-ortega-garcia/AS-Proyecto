@@ -50,10 +50,14 @@ $result = $conn->query($sql);
             text-align: left;
         }
     </style>
-
+</head>
+<body>
+    <header>
+        <h1>Goodgames</h1>
+    </header>
     <main>
         <section>
-            <h2>Catálogo de videojuegos</h2>
+            <h2>Resultados de la Búsqueda</h2>
             <table>
         <!--<tr>
             <th>Nombre</th>
@@ -80,6 +84,7 @@ $result = $conn->query($sql);
             $totalPaginas = ceil($fila["total"] / $porPagina);
 
             // Mostrar enlaces de paginación
+            /*
             echo "<div>";
             for ($i = 1; $i <= $totalPaginas; $i++) {
                  if ($i == $pagina) {
@@ -88,7 +93,7 @@ $result = $conn->query($sql);
                      echo "<a href='?pagina=$i'>$i</a> ";
                 }
             }
-            echo "</table>";
+            echo "</table>";*/
            }
            else {
                 echo "No se encontraron registros.";
@@ -99,5 +104,5 @@ $result = $conn->query($sql);
             <button class="button secondary-button" onclick="window.location.href='principal.php'">Volver a Juegos</button>
         </section>
     </main>
-</head>
+</body>
 </html>
