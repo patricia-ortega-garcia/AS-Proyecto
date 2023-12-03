@@ -13,11 +13,11 @@ cd AS-Proyecto
 ```
 3. Desplegar los servicios:
 ```sh
-sudo docker-compose up -d
+docker-compose up -d
 ```
 o
 ```sh
-sudo docker compose up -d
+docker compose up -d
 ```
 4. Visitar la página web:
 ```
@@ -25,5 +25,9 @@ En el navegador visitar http://localhost:8080
 ``` 
 5. Para parar los servicios:
 ```sh
-sudo docker-compose down
+docker-compose down
+```
+o
+```sh
+docker compose down
 ```
