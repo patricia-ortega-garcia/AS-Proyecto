@@ -18,9 +18,8 @@ sudo docker-compose up -d
 4. Visitar la página web:
 ```
 En el navegador visitar http://localhost:8080
-```
-  
-Para parar los servicios:
+``` 
+5. Para parar los servicios:
 ```sh
 sudo docker-compose down
 ```
