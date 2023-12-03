@@ -93,7 +93,8 @@ $result = $conn->query($sql);
                     <button class="button secondary-button" onclick="window.location.href='anadir_videojuego.html'">Añadir videojuego</button>
                     <pre>     </pre>
                     <button class="button secondary-button" onclick="window.location.href='ver_graficos.php'">Géneros más jugados</button>
-                
+                    <pre>     </pre>
+                    <button class="button secondary-button" onclick="window.location.href='ver_juegos_pop.php'">Juegos populares del año</button>
                 </div>
 
             <!--  </form> -->

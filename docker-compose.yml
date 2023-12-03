@@ -12,7 +12,7 @@ services:
       - database:/var/lib/mysql
 
     environment:
-      MYSQL_ROOT_PASSWORD: 4O7d9.jk #example
+      MYSQL_ROOT_PASSWORD: 4O7d9.jk 
       MYSQL_DATABASE: database
 
   web:
@@ -27,13 +27,14 @@ services:
       - ALLOW_OVERRIDE=true
     depends_on:
       - python
+      - api
 
   python:
     build:
       context: .
       dockerfile: DockerfilePython
-    ports:
-      - "5000:5000"
+    #ports:
+    #  - "5000:5000"
     depends_on:
       - db
     volumes:
@@ -77,6 +78,16 @@ services:
       - ./prometheus:/etc/prometheus
     command:
       - "--config.file=/etc/prometheus/prometheus.yml"
+
+# %%%%%%
+
+  api:
+    build: 
+      context: .
+      dockerfile: DockerfileApi
+    #restart: always
+    volumes:
+      - ./app:/app
 
 volumes:
   database:

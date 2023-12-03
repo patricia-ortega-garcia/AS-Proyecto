@@ -1,0 +1,12 @@
+FROM python:3-alpine3.15
+
+# Establece el directorio de trabajo
+WORKDIR /app
+
+COPY ./app /app
+
+# Instala las dependencias
+RUN pip install -r requirementsApi.txt
+
+# Comando para ejecutar la aplicación
+CMD ["python", "mas_vendidos.py"]
