@@ -15,6 +15,10 @@ cd AS-Proyecto
 ```sh
 sudo docker-compose up -d
 ```
+o
+```sh
+sudo docker compose up -d
+```
 4. Visitar la página web:
 ```
 En el navegador visitar http://localhost:8080
